@@ -89,5 +89,22 @@ if ($ADMIN->fulltree) {
     // We always have to add the setting to a page for it to have any effect.                                                       
     $page->add($setting);
 
+    $name = 'theme_photo/logo';                                                                                     
+    $title = 'Logo';                                                                     
+    $description = 'Logo for..';                                                          
+    // This creates the new setting.                                                                                                
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');                             
+    // This function will copy the image into the data_root location it can be served from.                                         
+    $setting->set_updatedcallback('theme_photo_update_settings_images');                                                            
+    // We always have to add the setting to a page for it to have any effect.                                                       
+    $page->add($setting);
+
+
+    $name = 'theme_photo/pagetitle';                                                                                     
+    $title = 'Page Title';                                                                     
+    $description = 'Title for page';
+    $setting = new admin_setting_configtext($name, $title, $description, 'pagetitle');   
+    $page->add($setting);
+
     $settings->add($page); 
 }
