@@ -3,3 +3,16 @@ body.pagelayout-login {
     background-image: url([[pix:theme_photo|loginbackgroundimage]]);                                                                
     background-size: cover;                                                                                                         
 }   
+
+.small-logo {
+    height: 32px;
+}
+
+.navbar-light .navbar-brand {
+    background: none;
+    color: black;
+    
+    &:hover{
+        color: black;
+    }
+}
